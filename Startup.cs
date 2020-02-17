@@ -31,12 +31,13 @@ namespace SupportUpdateAPICore
             services.AddDbContextPool<SupportUpdateContext>(options =>
                   options.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
 
-          
+
             // services.AddSwagger();
 
             services.AddControllers();
 
-            services.AddMvc(setupAction => {
+            services.AddMvc(setupAction =>
+            {
                 setupAction.EnableEndpointRouting = false;
             }).AddJsonOptions(jsonOptions =>
             {
@@ -167,14 +168,13 @@ namespace SupportUpdateAPICore
             //    }
             //  //  await next();
             //});
-            // Add your NSwag Extension here  
-            //app.UseOpenApi();
-            //  app.UseSwaggerUi3();
 
+
+            // Add your NSwag Extension here
+            app.UseOpenApi();
             app.UseSwaggerUi3(options =>
             {
-                options.SwaggerRoutes.Add(new SwaggerUi3Route("v1", "/SupportUpdateAPICore/swagger/v1/swagger.json"));
-              //  options.Path = "/swagger1";
+                options.SwaggerRoutes.Add(new SwaggerUi3Route("v1", "/swagger/v1/swagger.json"));
             });
 
 

@@ -20,6 +20,7 @@ namespace SupportUpdateAPICore.Controllers
             _context = context;
         }
 
+        [HttpPost("loginuser")]
         public IActionResult LoginUser(User user)
         {
             TokenProvider _tokenProvider = new TokenProvider();
@@ -33,6 +34,8 @@ namespace SupportUpdateAPICore.Controllers
             //return bAuthenticated;
             return Ok();
         }
+
+        [HttpGet("logoff")]
         public IActionResult Logoff()
         {
             HttpContext.Session.Clear();
