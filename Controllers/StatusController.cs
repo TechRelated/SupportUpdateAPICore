@@ -24,16 +24,22 @@ namespace SupportUpdateAPICore.Models
         }
 
         // GET: api/Status
-        [Authorize]
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Status>>> GetStatuses()
+        //[Authorize]
+        //[HttpGet]
+        //public async Task<ActionResult<IEnumerable<Status>>> GetStatuses()
+        //{
+        //    return await _statusRepository.GetStatuses();
+        //}
+
+        [HttpGet("statuslist")]
+        public async Task<List<Status>> GetStatusesAsync()
         {
             return await _statusRepository.GetStatuses();
         }
 
         // GET: api/Status/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Status>> GetStatus(int id)
+        public async Task<Status> GetStatus(int id)
         {
             return await _statusRepository.GetStatus(id);
         }

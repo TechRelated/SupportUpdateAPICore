@@ -1,12 +1,31 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GenerateProgramFile>false</GenerateProgramFile>
+    <PackageId />
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="ClientWebApp\**" />
+    <Compile Remove="SupportUpdateClient\**" />
+    <Content Remove="ClientWebApp\**" />
+    <Content Remove="SupportUpdateClient\**" />
+    <EmbeddedResource Remove="ClientWebApp\**" />
+    <EmbeddedResource Remove="SupportUpdateClient\**" />
+    <None Remove="ClientWebApp\**" />
+    <None Remove="SupportUpdateClient\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Client\SupportUpdateAPICoreClient.cs" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="3.0.1" />
     <PackageReference Include="IdentityServer4.EntityFramework" Version="3.0.0" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Core" Version="5.2.7" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.0.0" />

@@ -1,0 +1,84 @@
+﻿@page  "{Id:int}"
+@model SupportUpdateAPICore.DetailsModel
+
+@{
+    ViewData["Title"] = "Status Details";
+}
+
+<div class="row justify-content-center m-3">
+    <div class="col-sm-8">
+        <div class="card">
+            <div class="card-header text-center">
+                <h1> Status Details</h1>
+            </div>
+
+            <div class="card-body text-left">
+                <div>
+                    <label asp-for="st.StatusName" class="control-label">Status Name : </label>
+                    <label>@Model.st.StatusName</label>
+                </div>
+                <div>
+                    <label asp-for="st.RecordCreated" class="control-label">Record Created : </label>
+                    <label>@Model.st.RecordCreated</label>
+                </div>
+                <div>
+                    <label asp-for="st.RecordCreatedBy" class="control-label">Record Created By : </label>
+                    <label>@Model.st.RecordCreatedBy</label>
+                </div>
+                <div>
+                    <label asp-for="st.RecordUpdated" class="control-label">Record Updated : </label>
+                    <label>@Model.st.RecordUpdated</label>
+                </div>
+                <div>
+                    <label asp-for="st.RecordUpdatedBy" class="control-label">Record Updated By : </label>
+                    <label>@Model.st.RecordUpdatedBy</label>
+                </div>
+            </div>
+            <div class="card-footer text-center">
+                <a class="btn btn-outline-primary" asp-page="./Edit" asp-route-id="@Model.st.StatusID">Edit</a> 
+                <a asp-page="./List">Back to List</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*<div>
+    <h4>Status</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Status Name
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.st.StatusName)
+        </dd>
+        <dt class="col-sm-2">
+            Record Created
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.st.RecordCreated)
+        </dd>
+        <dt class="col-sm-2">
+            Record CreatedBy
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.st.RecordCreatedBy)
+        </dd>
+        <dt class="col-sm-2">
+            Record Updated
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.st.RecordUpdated)
+        </dd>
+        <dt class="col-sm-2">
+            Record UpdatedBy
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.st.RecordUpdatedBy)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.st.StatusID">Edit</a> |
+    <a asp-page="./List">Back to List</a>
+</div>*@

@@ -1,0 +1,138 @@
+﻿@page
+@model IndexModel1
+
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="https://code.jquery.com/jquery-3.4.0.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            @*$('#buttonDemo1').click(function(){
+                $.ajax({
+                    type: 'GET',
+                    url: '@Url.Page("index", "Status")',
+                    success: function (result) {
+                        $('#result1').html(result);
+                    }
+                });
+            });*@
+
+            @*$('#buttonDemo2').click(function () {
+                var fullName = $('#texboxFullName').val();
+                $.ajax({
+                    type: 'GET',
+                    data: { fullName: fullName},
+                    url: '@Url.Page("index", "demo2")',
+                    success: function (result) {
+                        $('#result2').html(result);
+                    }
+                });
+            });
+
+            $('#buttonDemo3').click(function () {
+                $.ajax({
+                    type: 'GET',
+                    dataType: 'json',
+                    contentType: 'application/json',
+                    url: '@Url.Page("index", "demo3")',
+                    success: function (result) {
+                        var s = 'Id: ' + result.id;
+                        s += '<br>Name: ' + result.name;
+                        s += '<br>Price: ' + result.price;
+                        $('#result3').html(s);
+                    }
+                });
+            });
+
+            $('#buttonDemo4').click(function () {
+                $.ajax({
+                    type: 'GET',
+                    dataType: 'json',
+                    contentType: 'application/json',
+                    url: '@Url.Page("index", "demo4")',
+                    success: function (result) {
+                        var s = '';
+                        for (var i = 0; i < result.length; i++) {
+                            s += '<br>Id: ' + result[i].id;
+                            s += '<br>Name: ' + result[i].name;
+                            s += '<br>Price: ' + result[i].price;
+                            s += '<br>----------------------------';
+                        }
+                        $('#result4').html(s);
+                    }
+                });
+            });*@
+
+        });
+    </script>
+</head>
+<body>
+
+    <div>
+        <table>
+            @*<tr>
+                    <td> Populating With ViewData Data </td>
+                    <td>
+                        @Html.DropDownList("MySkills", (IEnumerable
+                       <SelectListItem>)ViewData["MySkills"])
+                    </td>
+                </tr>*@
+            <tr>
+                @*<td> list </td>*@
+                @*<td>@Html.DropDownList("Statuses")</td>*@
+                @*<td>
+                    @Html.DropDownList("Statuses", (IEnumerable
+                   <List>)ViewData["Statuses"])
+                </td>*@
+            </tr>
+        </table>
+    </div>
+
+
+    @*<select asp-for="StatusList" class="form-control" asp-items="ViewBag.StatusList"></select>*@
+
+    @*<fieldset>
+            <legend>Status</legend>
+            <form>
+                <input type="button" value="Status" id="buttonDemo1" />
+                <br />
+                <span id="result1"></span>
+            </form>
+        </fieldset>*@
+
+    @*<fieldset>
+            <legend>Demo 2</legend>
+            <form>
+                <input type="text" id="texboxFullName" />
+                <input type="button" value="Demo 2" id="buttonDemo2" />
+                <br />
+                <span id="result2"></span>
+            </form>
+        </fieldset>
+
+        <fieldset>
+            <legend>Demo 3</legend>
+            <form>
+                <input type="button" value="Demo 3" id="buttonDemo3" />
+                <br />
+                <span id="result3"></span>
+            </form>
+        </fieldset>
+
+        <fieldset>
+            <legend>Demo 4</legend>
+            <form>
+                <input type="button" value="Demo 4" id="buttonDemo4" />
+                <br />
+                <span id="result4"></span>
+            </form>
+        </fieldset>*@
+
+</body>
+</html>

@@ -6,12 +6,10 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Threading.Tasks;
 
-
-namespace SupportUpdateAPICore.Models
+namespace ClientWebApp.ViewModel
 {
-
     [DataContract]
-    public class Status
+    public class SupportStatus
     {
         [DataMember(Name = "StatusID")]
         [Key]
@@ -21,10 +19,10 @@ namespace SupportUpdateAPICore.Models
         [Required]
         [Column(TypeName = "nvarchar(500)")]
         public string StatusName { get; set; }
-        
+
         [DataMember(Name = "RecordCreated")]
         public DateTime? RecordCreated { get; set; }
-        
+
         [DataMember(Name = "RecordCreatedBy")]
         public int? RecordCreatedBy { get; set; }
 

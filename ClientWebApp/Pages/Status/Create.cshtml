@@ -1,0 +1,57 @@
+﻿@page
+@model SupportUpdateAPICore.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="row justify-content-center m-3">
+    <div class="col-sm-8">
+        <div class="card">
+            <div class="card-header text-center">
+                <h1> Add Status</h1>
+            </div>
+
+            <div class="card-body text-left">
+                <form method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                     <div class="form-group">
+                        <label asp-for="st.StatusName" class="control-label">Status Name</label>
+                        <input asp-for="st.StatusName" class="form-control" />
+                        <span asp-validation-for="st.StatusName" class="text-danger"></span>
+                    </div>
+                    <div>&nbsp;</div>
+                    <div class="card-footer text-center">
+                        <input type="submit" value="Save" class="btn btn-outline-primary" />
+                        <a asp-page="./List">Back to List</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*<hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="st.StatusName" class="control-label"></label>
+                    <input asp-for="st.StatusName" class="form-control" />
+                    <span asp-validation-for="st.StatusName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-page="./List">Back to List</a>
+    </div>*@
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

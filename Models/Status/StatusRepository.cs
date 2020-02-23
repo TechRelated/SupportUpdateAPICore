@@ -32,20 +32,21 @@ namespace SupportUpdateAPICore.Models
             return status;
         }
 
-        public async Task<ActionResult<Status>> GetStatus(int id)
+        public async Task<Status> GetStatus(int id)
         {
             var status = await _context.Status.FindAsync(id);
 
 
             if (status == null)
             {
-                return new NotFoundResult();
+                //  return new NotFoundResult();
+                return null;
             }
 
             return status;
         }
 
-        public async Task<ActionResult<IEnumerable<Status>>> GetStatuses()
+        public async Task<List<Status>> GetStatuses()
         {
             return await _context.Status.ToListAsync();
         }

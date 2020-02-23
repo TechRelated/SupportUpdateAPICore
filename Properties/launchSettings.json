@@ -4,7 +4,6 @@
     "anonymousAuthentication": true,
     "iisExpress": {
       "applicationUrl": "http://localhost:59001",
-      "launchUrl": "weatherforecast",
       "sslPort": 0
     }
   },
@@ -20,8 +19,8 @@
     },
     "SupportUpdateAPICore": {
       "commandName": "Project",
-      "launchBrowser": true,
-      "launchUrl": "weatherforecast",
+      "launchBrowser": false,
+      "launchUrl": "",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },

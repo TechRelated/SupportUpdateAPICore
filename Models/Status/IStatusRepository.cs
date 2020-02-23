@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Web.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace SupportUpdateAPICore.Models
 {
    public  interface IStatusRepository
     {
-        Task<ActionResult<IEnumerable<Status>>> GetStatuses();
+        Task<List<Status>> GetStatuses();
 
-        Task<ActionResult<Status>> GetStatus(int id);
+        Task<Status> GetStatus(int id);
 
         Task<ActionResult<Status>> PutStatus(int id, Status status);
 

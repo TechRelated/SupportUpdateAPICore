@@ -1,0 +1,38 @@
+﻿@page
+@model ListModel
+
+@{
+    ViewData["Title"] = "Status List";
+}
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Status Name</th>
+                <th>Record Created</th>
+                <th>Record CreatedBy</th>
+                <th>Record Updated</th>
+                <th>Record UpdatedBy</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.st)
+            {
+            <tr>
+                <td>@item.StatusName</td>
+                <td>@item.RecordCreated</td>
+                <td>@item.RecordCreatedBy</td>
+                <td>@item.RecordUpdated</td>
+                <td>@item.RecordUpdatedBy</td>
+                <td class="text-center"> <a asp-page="./Edit" asp-route-id="@item.StatusID">Edit</a></td>
+                <td class="text-center"><a asp-page="./Details" asp-route-id="@item.StatusID">Details</a></td>
+                <td class="text-center"><a asp-page="./Delete" asp-route-id="@item.StatusID">Delete</a></td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
